@@ -8,7 +8,7 @@ import { InputBar } from '@/components/InputBar';
 import { NegotiationCheatSheet } from '@/components/NegotiationCheatSheet';
 import { useChat } from '@/hooks/useChat';
 import { useAudio } from '@/hooks/useAudio';
-import { imageToBase64, clearHistory } from '@/lib/api';
+import { imageToBase64 } from '@/lib/api';
 import { getLanguageForCity, resolveCity } from '@/lib/language-map';
 import { detectLocation } from '@/lib/geolocation';
 import { log } from '@/lib/logger';
@@ -37,15 +37,23 @@ export default function Home() {
   const hagglingItemRef = useRef('');
 
   // Custom hooks
-  const { messages: chatMessages, isLoading, sendMessage, clearMessages: clearChatMessages } = useChat();
+  const { messages: chatMessages, setMessages: setChatMessages, isLoading, sendMessage } = useChat();
   const {
     isActive: isAudioActive,
     isConnecting: isAudioConnecting,
     messages: audioMessages,
+    setMessages: setAudioMessages,
     startSession,
     stopSession,
-    clearMessages: clearAudioMessages,
   } = useAudio();
+
+  // Per-mode message cache
+  const chatCacheRef = useRef<Record<Mode, typeof chatMessages>>({
+    context: [],
+    haggling: [],
+    visual: [],
+    audio: [],
+  });
 
   // Use audio messages when in audio mode, chat messages otherwise
   const messages = mode === 'audio' ? audioMessages : chatMessages;
@@ -116,13 +124,26 @@ export default function Home() {
   }, [messages, locationStatus]);
 
   const handleModeChange = (newMode: Mode) => {
-    setMode(newMode);
-    clearChatMessages();
-    clearAudioMessages();
-    clearHistory();
+    // Save current messages to cache
+    if (mode === 'audio') {
+      chatCacheRef.current[mode] = audioMessages;
+    } else {
+      chatCacheRef.current[mode] = chatMessages;
+    }
+
+    // Stop audio session if switching away
     if (isAudioActive) {
       stopSession();
     }
+
+    // Restore cached messages for the new mode
+    if (newMode === 'audio') {
+      setAudioMessages(chatCacheRef.current[newMode]);
+    } else {
+      setChatMessages(chatCacheRef.current[newMode]);
+    }
+
+    setMode(newMode);
   };
 
   const handleSendMessage = async (content: string) => {

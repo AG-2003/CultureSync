@@ -100,12 +100,12 @@ export function CameraCapture({ onCapture, onClose }: CameraCaptureProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black z-50 flex flex-col">
+    <div className="fixed inset-0 bg-black z-50 flex flex-col h-dvh">
       {/* Header */}
-      <div className="bg-neutral-900 px-4 py-3 flex items-center justify-between">
+      <div className="flex-shrink-0 bg-slate-900 px-4 py-3 flex items-center justify-between">
         <button
           onClick={onClose}
-          className="p-2 hover:bg-neutral-800 rounded-lg transition-colors"
+          className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
           aria-label="Close camera"
         >
           <X className="w-6 h-6 text-white" />
@@ -113,28 +113,28 @@ export function CameraCapture({ onCapture, onClose }: CameraCaptureProps) {
         <h2 className="text-white font-semibold">Take Photo</h2>
         <button
           onClick={switchCamera}
-          className="p-2 hover:bg-neutral-800 rounded-lg transition-colors"
+          className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
           aria-label="Switch camera"
         >
           <RotateCcw className="w-6 h-6 text-white" />
         </button>
       </div>
 
-      {/* Camera View */}
-      <div className="flex-1 relative bg-black flex items-center justify-center">
+      {/* Camera View — constrained to remaining space minus capture button */}
+      <div className="flex-1 min-h-0 relative bg-black flex items-center justify-center overflow-hidden">
         {error ? (
           <div className="text-center px-6">
             <p className="text-red-400 mb-4">{error}</p>
             <div className="flex gap-3 justify-center">
               <button
                 onClick={startCamera}
-                className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Retry
               </button>
               <button
                 onClick={onClose}
-                className="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition-colors"
+                className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors"
               >
                 Close
               </button>
@@ -145,7 +145,7 @@ export function CameraCapture({ onCapture, onClose }: CameraCaptureProps) {
             {!isReady && (
               <div className="absolute inset-0 flex items-center justify-center bg-black z-10">
                 <div className="text-center">
-                  <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                  <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
                   <p className="text-white">Starting camera...</p>
                 </div>
               </div>
@@ -156,22 +156,23 @@ export function CameraCapture({ onCapture, onClose }: CameraCaptureProps) {
               playsInline
               muted
               onPlay={handleVideoPlay}
-              className="max-w-full max-h-full object-contain"
+              className="w-full h-full object-cover"
             />
             <canvas ref={canvasRef} className="hidden" />
           </>
         )}
       </div>
 
-      {/* Capture Button */}
+      {/* Capture Button — always pinned at bottom */}
       {!error && isReady && (
-        <div className="bg-neutral-900 px-4 py-6 flex justify-center">
+        <div className="flex-shrink-0 bg-black/90 px-4 py-6 flex justify-center" style={{ paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))' }}>
           <button
             onClick={capturePhoto}
-            className="w-16 h-16 rounded-full bg-white border-4 border-neutral-700 hover:bg-neutral-200 transition-all active:scale-95"
+            className="w-18 h-18 rounded-full bg-white border-4 border-slate-600 hover:bg-slate-200 transition-all active:scale-95 flex items-center justify-center"
+            style={{ width: '72px', height: '72px' }}
             aria-label="Capture photo"
           >
-            <Camera className="w-8 h-8 mx-auto text-neutral-900" />
+            <Camera className="w-8 h-8 text-slate-900" />
           </button>
         </div>
       )}

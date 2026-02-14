@@ -153,6 +153,7 @@ export function useAudio() {
     isActive,
     isConnecting,
     messages,
+    setMessages,
     error,
     startSession,
     stopSession,

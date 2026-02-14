@@ -123,6 +123,7 @@ export function useChat() {
 
   return {
     messages,
+    setMessages,
     isLoading,
     error,
     sendMessage,
