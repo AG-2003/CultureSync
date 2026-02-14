@@ -1,0 +1,55 @@
+{
+  "categories": {
+    "transport": {
+      "auto_rickshaw_per_km": { "local": "10-15", "tourist": "30-50", "unit": "INR/km" },
+      "cycle_rickshaw_short_ride": { "local": "20-30", "tourist": "100-200", "unit": "INR" },
+      "tuk_tuk_from_airport": { "local": "200-400", "tourist": "800-1500", "unit": "INR" },
+      "uber_ola_surge_markup": { "local": "1x-1.5x", "tourist": "same (use app)", "unit": "multiplier" }
+    },
+    "food_street": {
+      "chai": { "local": "10-15", "tourist": "20-30", "unit": "INR/cup" },
+      "samosa": { "local": "10-15", "tourist": "20-40", "unit": "INR/piece" },
+      "pani_puri_plate": { "local": "20-30", "tourist": "50-80", "unit": "INR/plate" },
+      "thali_meal": { "local": "80-150", "tourist": "200-400", "unit": "INR" },
+      "fresh_juice": { "local": "20-40", "tourist": "50-100", "unit": "INR/glass" },
+      "lassi": { "local": "30-50", "tourist": "80-150", "unit": "INR/glass" }
+    },
+    "shopping": {
+      "pashmina_shawl": { "local": "500-2000", "tourist": "3000-8000", "unit": "INR" },
+      "silk_saree": { "local": "800-5000", "tourist": "3000-15000", "unit": "INR" },
+      "leather_bag": { "local": "300-1000", "tourist": "1500-5000", "unit": "INR" },
+      "spices_per_100g": { "local": "50-150", "tourist": "200-500", "unit": "INR" },
+      "brass_figurine_small": { "local": "100-300", "tourist": "500-1500", "unit": "INR" },
+      "block_print_fabric_per_meter": { "local": "100-300", "tourist": "400-1000", "unit": "INR" },
+      "marble_inlay_box_small": { "local": "200-500", "tourist": "1000-3000", "unit": "INR" },
+      "juttis_mojaris_shoes": { "local": "200-600", "tourist": "800-2000", "unit": "INR" }
+    },
+    "services": {
+      "henna_one_hand": { "local": "50-100", "tourist": "300-500", "unit": "INR" },
+      "temple_guide_1hr": { "local": "100-200", "tourist": "500-1000", "unit": "INR" },
+      "photography_permission_monument": { "local": "25-50", "tourist": "200 (official)", "unit": "INR" },
+      "boat_ride_varanasi_1hr": { "local": "100-200", "tourist": "500-1500", "unit": "INR" }
+    }
+  },
+  "general_rules": {
+    "opening_offer_percentage": 0.35,
+    "walk_away_threshold_percentage": 0.6,
+    "tips": [
+      "Never accept the first price",
+      "Always smile and be friendly while negotiating",
+      "Walking away is the most powerful move — they will often call you back",
+      "Shop around before buying — visit 2-3 stalls for the same item",
+      "Fixed-price government emporiums (like Rajasthali) are good benchmarks"
+    ],
+    "common_phrases": {
+      "too_expensive": "Bahut mehnga hai! (बहुत महंगा है!)",
+      "best_price": "Sabse kam price kya hai? (सबसे कम प्राइस क्या है?)",
+      "last_price": "Last price batao (लास्ट प्राइस बताओ)",
+      "i_will_give": "Main ___ dunga/dungi (मैं ___ दूंगा/दूंगी)",
+      "walking_away": "Chalo, aur dekhte hain (चलो, और देखते हैं)",
+      "deal": "Theek hai, done! (ठीक है, done!)",
+      "too_much": "Itna zyada? (इतना ज़्यादा?)",
+      "brother_give_good_price": "Bhaiya, sahi price laga do (भैया, सही प्राइस लगा दो)"
+    }
+  }
+}
