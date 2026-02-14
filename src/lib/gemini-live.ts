@@ -99,8 +99,7 @@ When the user says something like "I'll take it from here", "stop", "give me a s
                   this.onAudioChunk(bytes.buffer);
                 }
                 if (part.text) {
-                  log.debug(`[GEMINI] Model text: "${part.text.substring(0, 100)}"`);
-                  this.onTranscription(part.text, false);
+                  log.debug(`[GEMINI] Model text (ignored for transcript): "${part.text.substring(0, 100)}"`);
                 }
               }
             }
