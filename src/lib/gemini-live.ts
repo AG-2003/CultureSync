@@ -22,7 +22,7 @@ export class LiveAudioSession {
     onTranscription: (text: string, isInput: boolean) => void,
     onDisconnect?: () => void
   ) {
-    this.ai = new GoogleGenAI({ apiKey });
+    this.ai = new GoogleGenAI({ apiKey, httpOptions: { apiVersion: 'v1alpha' } });
     this.onAudioChunk = onAudioChunk;
     this.onTranscription = onTranscription;
     this.onDisconnect = onDisconnect ?? null;

@@ -87,7 +87,7 @@ export function ChatArea({
         <div className="flex-1 overflow-y-auto px-4 py-2 space-y-3">
           {messages.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center px-6">
-              <p className="text-sm text-neutral-500 mb-4">
+              <p className="text-sm text-slate-500 mb-4">
                 {isAudioActive ? 'Listening... speak now' : 'Tap the mic to start translating'}
               </p>
               <QuickActions mode={mode} onActionClick={onQuickAction} />
@@ -109,7 +109,7 @@ export function ChatArea({
         <div className="flex flex-col items-center justify-center h-full text-center px-6">
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-            <p className="text-sm text-neutral-400">{description}</p>
+            <p className="text-sm text-slate-400">{description}</p>
           </div>
           <QuickActions mode={mode} onActionClick={onQuickAction} />
         </div>
@@ -121,15 +121,15 @@ export function ChatArea({
 
       {isLoading && (
         <div className="flex gap-3">
-          <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-neutral-700">
-            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-slate-700">
+            <div className="w-5 h-5 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin" />
           </div>
           <div className="flex-1 flex items-center">
-            <div className="bg-neutral-800 rounded-2xl rounded-tl-sm px-4 py-3">
+            <div className="bg-slate-800/80 border border-slate-700/50 rounded-2xl rounded-tl-sm px-4 py-3">
               <div className="flex gap-1">
-                <div className="w-2 h-2 bg-neutral-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                <div className="w-2 h-2 bg-neutral-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                <div className="w-2 h-2 bg-neutral-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
               </div>
             </div>
           </div>

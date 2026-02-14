@@ -10,15 +10,15 @@ interface ModeSelectorProps {
 }
 
 const modes = [
-  { id: 'context' as Mode, label: 'Chat', icon: MessageSquare, color: 'text-blue-400', activeBar: 'bg-blue-400' },
-  { id: 'haggling' as Mode, label: 'Bargain', icon: DollarSign, color: 'text-green-400', activeBar: 'bg-green-400' },
-  { id: 'visual' as Mode, label: 'Vision', icon: Camera, color: 'text-purple-400', activeBar: 'bg-purple-400' },
-  { id: 'audio' as Mode, label: 'Audio', icon: Mic, color: 'text-orange-400', activeBar: 'bg-orange-400' },
+  { id: 'context' as Mode, label: 'Chat', icon: MessageSquare, color: 'text-cyan-400', activeBar: 'bg-cyan-400' },
+  { id: 'haggling' as Mode, label: 'Bargain', icon: DollarSign, color: 'text-emerald-400', activeBar: 'bg-emerald-400' },
+  { id: 'visual' as Mode, label: 'Vision', icon: Camera, color: 'text-violet-400', activeBar: 'bg-violet-400' },
+  { id: 'audio' as Mode, label: 'Audio', icon: Mic, color: 'text-blue-400', activeBar: 'bg-blue-400' },
 ];
 
 export function ModeSelector({ currentMode, onModeChange }: ModeSelectorProps) {
   return (
-    <div className="bg-neutral-800 border-b border-neutral-700 px-2 py-1">
+    <div className="bg-slate-900/80 border-b border-slate-800 px-2 py-1">
       <div className="flex justify-around">
         {modes.map((mode) => {
           const Icon = mode.icon;
@@ -29,12 +29,12 @@ export function ModeSelector({ currentMode, onModeChange }: ModeSelectorProps) {
               key={mode.id}
               onClick={() => onModeChange(mode.id)}
               className={`relative flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all ${
-                isActive ? '' : 'hover:bg-neutral-750'
+                isActive ? '' : 'hover:bg-slate-800'
               }`}
             >
-              <Icon className={`w-5 h-5 ${isActive ? mode.color : 'text-neutral-500'}`} />
+              <Icon className={`w-5 h-5 ${isActive ? mode.color : 'text-slate-500'}`} />
               <span className={`text-xs font-medium ${
-                isActive ? 'text-white' : 'text-neutral-500'
+                isActive ? 'text-white' : 'text-slate-500'
               }`}>
                 {mode.label}
               </span>

@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
 /* ── Tailwind v4 theme overrides ─────────────────────────────────────────────
-   The frontend uses CSS-variable-based colors from a Tailwind v3 config.
-   In v4 we register these as @theme values so classes like `bg-background`,
-   `text-foreground`, `border-border` etc. work out of the box.
+   CSS-variable-based colors registered as @theme values so classes like
+   `bg-background`, `text-foreground`, `border-border` etc. work.
    ──────────────────────────────────────────────────────────────────────────── */
 
 @theme inline {
@@ -34,26 +33,26 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* ── CSS variables (dark theme by default — matches the frontend design) ───── */
+/* ── CSS variables (dark blue tech theme) ──────────────────────────────────── */
 
 :root {
   --font-size: 16px;
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #06080f;
+  --foreground: #f1f5f9;
+  --card: #0d1321;
+  --card-foreground: #f1f5f9;
+  --primary: #38bdf8;
+  --primary-foreground: #0c1222;
+  --secondary: #1e293b;
+  --secondary-foreground: #f1f5f9;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #f1f5f9;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --border: #1e293b;
+  --ring: #334155;
   --radius: 0.625rem;
 }
 
@@ -108,12 +107,12 @@ html {
 }
 
 .markdown-body strong {
-  color: #fdba74; /* orange-300 */
+  color: #67e8f9; /* cyan-300 */
   font-weight: 600;
 }
 
 .markdown-body code {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(56, 189, 248, 0.1);
   padding: 0.1em 0.35em;
   border-radius: 0.25em;
   font-size: 0.85em;
@@ -121,7 +120,8 @@ html {
 }
 
 .markdown-body pre {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.1);
   border-radius: 0.5em;
   padding: 0.75em;
   margin: 0.5em 0;
@@ -134,7 +134,7 @@ html {
 }
 
 .markdown-body a {
-  color: #fb923c; /* orange-400 */
+  color: #22d3ee; /* cyan-400 */
   text-decoration: none;
 }
 
@@ -152,26 +152,26 @@ html {
 .markdown-body th,
 .markdown-body td {
   padding: 0.35em 0.5em;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.1);
   text-align: left;
 }
 
 .markdown-body th {
-  color: #d4d4d4; /* neutral-300 */
+  color: #cbd5e1; /* slate-300 */
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(56, 189, 248, 0.05);
 }
 
 .markdown-body blockquote {
-  border-left: 3px solid #fb923c;
+  border-left: 3px solid #3b82f6;
   padding-left: 0.75em;
   margin: 0.5em 0;
-  color: #a3a3a3; /* neutral-400 */
+  color: #94a3b8; /* slate-400 */
 }
 
 .markdown-body hr {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(56, 189, 248, 0.1);
   margin: 0.75em 0;
 }
 

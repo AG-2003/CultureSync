@@ -97,28 +97,28 @@ export function InputBar({
 
       {/* Image preview confirmation */}
       {pendingImage && (
-        <div className="bg-neutral-800 border-t border-neutral-700 px-4 py-3">
+        <div className="bg-slate-900 border-t border-slate-800 px-4 py-3">
           <div className="flex items-end gap-3">
             <div className="relative">
               <img
                 src={pendingImage.previewUrl}
                 alt="Preview"
-                className="w-24 h-24 object-cover rounded-lg border border-neutral-600"
+                className="w-24 h-24 object-cover rounded-lg border border-slate-700"
               />
               <button
                 onClick={handleImageCancel}
-                className="absolute -top-2 -right-2 w-6 h-6 bg-neutral-700 hover:bg-red-500 rounded-full flex items-center justify-center transition-colors"
+                className="absolute -top-2 -right-2 w-6 h-6 bg-slate-700 hover:bg-red-500 rounded-full flex items-center justify-center transition-colors"
                 aria-label="Remove image"
               >
                 <X className="w-3.5 h-3.5 text-white" />
               </button>
             </div>
             <div className="flex-1 flex flex-col gap-2">
-              <p className="text-xs text-neutral-400">Send this image for analysis?</p>
+              <p className="text-xs text-slate-400">Send this image for analysis?</p>
               <button
                 onClick={handleImageConfirm}
                 disabled={isLoading}
-                className="px-4 py-2 bg-purple-500 hover:bg-purple-600 disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-colors"
+                className="px-4 py-2 bg-violet-600 hover:bg-violet-700 disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-colors"
               >
                 {isLoading ? 'Sending...' : 'Send Image'}
               </button>
@@ -129,10 +129,10 @@ export function InputBar({
 
       {/* Main input bar */}
       {!pendingImage && (
-        <div className="bg-neutral-800 border-t border-neutral-700 px-4 py-3">
+        <div className="bg-slate-900 border-t border-slate-800 px-4 py-3">
           {isListening && (
-            <div className="flex items-center justify-center gap-2 mb-2 text-red-500 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+            <div className="flex items-center justify-center gap-2 mb-2 text-cyan-400 text-sm">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
               <span>Listening... Tap mic to stop</span>
             </div>
           )}
@@ -144,7 +144,7 @@ export function InputBar({
                   type="button"
                   onClick={handleImageClick}
                   disabled={isLoading}
-                  className="flex-shrink-0 p-2 rounded-lg bg-purple-500 hover:bg-purple-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="flex-shrink-0 p-2 rounded-lg bg-violet-600 hover:bg-violet-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   aria-label="Upload image"
                   title="Upload from gallery"
                 >
@@ -154,7 +154,7 @@ export function InputBar({
                   type="button"
                   onClick={() => setShowCamera(true)}
                   disabled={isLoading}
-                  className="flex-shrink-0 p-2 rounded-lg bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="flex-shrink-0 p-2 rounded-lg bg-violet-700 hover:bg-violet-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   aria-label="Take photo"
                   title="Take photo with camera"
                 >
@@ -175,7 +175,7 @@ export function InputBar({
                   ? 'What do you want to buy?'
                   : 'Describe what you see...'
               }
-              className="flex-1 bg-neutral-700 text-white placeholder-neutral-400 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50"
+              className="flex-1 bg-slate-800 text-white placeholder-slate-500 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border border-slate-700/50 disabled:opacity-50"
             />
 
             {(mode === 'context' || mode === 'haggling') && (
@@ -185,19 +185,19 @@ export function InputBar({
                 disabled={isLoading}
                 className={`flex-shrink-0 p-2 rounded-lg transition-colors ${
                   isListening
-                    ? 'bg-red-500 animate-pulse'
-                    : 'bg-neutral-700 hover:bg-neutral-600 disabled:opacity-50'
+                    ? 'bg-cyan-500 animate-pulse shadow-lg shadow-cyan-500/30'
+                    : 'bg-slate-800 hover:bg-slate-700 border border-slate-700/50 disabled:opacity-50'
                 }`}
                 aria-label={isListening ? 'Stop listening' : 'Voice input'}
               >
-                <Mic className={`w-5 h-5 ${isListening ? 'text-white' : 'text-neutral-300'}`} />
+                <Mic className={`w-5 h-5 ${isListening ? 'text-white' : 'text-slate-400'}`} />
               </button>
             )}
 
             <button
               type="submit"
               disabled={!input.trim() || isLoading}
-              className="flex-shrink-0 p-2 rounded-lg bg-orange-500 hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex-shrink-0 p-2 rounded-lg bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               aria-label="Send message"
             >
               {isLoading ? (

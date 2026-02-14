@@ -178,24 +178,24 @@ export default function Home() {
 
   // Location badge config
   const locationBadge = {
-    loading: { text: 'Detecting...', color: 'text-neutral-400', bg: 'bg-neutral-800' },
-    detected: { text: location, color: 'text-green-400', bg: 'bg-green-900/30' },
-    manual: { text: location, color: 'text-blue-400', bg: 'bg-blue-900/30' },
-    pending: { text: 'Tell me your city', color: 'text-amber-400', bg: 'bg-amber-900/30' },
+    loading: { text: 'Detecting...', color: 'text-slate-400', bg: 'bg-slate-800' },
+    detected: { text: location, color: 'text-emerald-400', bg: 'bg-emerald-900/30 border border-emerald-800/30' },
+    manual: { text: location, color: 'text-cyan-400', bg: 'bg-cyan-900/30 border border-cyan-800/30' },
+    pending: { text: 'Tell me your city', color: 'text-amber-400', bg: 'bg-amber-900/30 border border-amber-800/30' },
   }[locationStatus];
 
   return (
-    <div className="flex flex-col h-dvh bg-neutral-900 max-w-md mx-auto">
+    <div className="flex flex-col h-dvh bg-[#06080f] max-w-md mx-auto">
       {/* Header */}
-      <div className="bg-[#2B2621] border-b border-neutral-800 px-4 py-3 flex items-center justify-between">
+      <div className="bg-slate-900/90 border-b border-slate-800 px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <h1 className="font-bold text-lg text-orange-500">CultureSync</h1>
-          <span className="text-[10px] font-medium text-orange-500 bg-orange-500/10 px-1.5 py-0.5 rounded">
+          <h1 className="font-bold text-lg text-cyan-400">CultureSync</h1>
+          <span className="text-[10px] font-medium text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded border border-cyan-400/20">
             BETA
           </span>
         </div>
         <div className="flex items-center gap-1.5">
-          <MapPin className="w-3.5 h-3.5 text-orange-500" />
+          <MapPin className="w-3.5 h-3.5 text-cyan-400" />
           <span className={`text-xs px-2 py-1 rounded-md ${locationBadge.bg} ${locationBadge.color}`}>
             {locationBadge.text}
           </span>

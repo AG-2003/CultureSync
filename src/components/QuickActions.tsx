@@ -48,7 +48,7 @@ export function QuickActions({ mode, onActionClick }: QuickActionsProps) {
         <button
           key={action}
           onClick={() => onActionClick?.(action)}
-          className="px-3 py-1.5 text-xs font-medium text-neutral-300 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 rounded-full transition-colors"
+          className="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/80 hover:bg-slate-700 border border-slate-700/50 rounded-full transition-colors hover:border-blue-500/30 hover:text-white"
         >
           {action}
         </button>

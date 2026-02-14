@@ -42,20 +42,20 @@ export function MessageBubble({ message }: MessageBubbleProps) {
   return (
     <div className={`flex gap-3 ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
       <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
-        isUser ? 'bg-orange-500' : 'bg-neutral-700'
+        isUser ? 'bg-blue-600' : 'bg-slate-700'
       }`}>
         {isUser ? (
           <User className="w-5 h-5 text-white" />
         ) : (
-          <Bot className="w-5 h-5 text-white" />
+          <Bot className="w-5 h-5 text-cyan-400" />
         )}
       </div>
 
       <div className={`flex-1 ${isUser ? 'items-end' : 'items-start'} flex flex-col gap-2`}>
         <div className={`rounded-2xl px-4 py-3 max-w-[85%] ${
           isUser
-            ? 'bg-orange-500 text-white rounded-tr-sm'
-            : 'bg-neutral-800 text-white rounded-tl-sm'
+            ? 'bg-blue-600 text-white rounded-tr-sm'
+            : 'bg-slate-800/80 text-slate-100 rounded-tl-sm border border-slate-700/50'
         }`}>
           {isUser && message.imageUrl && (
             <img
@@ -86,12 +86,12 @@ export function MessageBubble({ message }: MessageBubbleProps) {
         )}
 
         {message.explanation && !isUser && (
-          <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg px-3 py-2 max-w-[85%]">
-            <p className="text-xs text-neutral-300 leading-relaxed">{message.explanation}</p>
+          <div className="bg-slate-800/50 border border-slate-700/50 rounded-lg px-3 py-2 max-w-[85%]">
+            <p className="text-xs text-slate-300 leading-relaxed">{message.explanation}</p>
           </div>
         )}
 
-        <span className="text-xs text-neutral-500 px-1">
+        <span className="text-xs text-slate-500 px-1">
           {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </span>
       </div>
