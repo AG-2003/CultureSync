@@ -206,7 +206,7 @@ export default function Home() {
   }[locationStatus];
 
   return (
-    <div className="flex flex-col h-dvh bg-[#06080f] max-w-md mx-auto">
+    <div className="flex flex-col h-dvh bg-[#06080f] max-w-md mx-auto md:border-x md:border-slate-800/60 md:shadow-[0_0_80px_rgba(56,189,248,0.03)]">
       {/* Header */}
       <div className="bg-slate-900/90 border-b border-slate-800 px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
